@@ -1,4 +1,4 @@
-package moe.nemesiss.di.feature
+package moe.nemesiss.di.features
 
 import com.google.inject.AbstractModule
 import com.google.inject.Guice

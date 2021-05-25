@@ -6,7 +6,7 @@ import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import moe.nemesiss.di.feature.DependencyInjection
+import moe.nemesiss.di.features.DependencyInjection
 import moe.nemesiss.di.modules.user.UserModule
 import moe.nemesiss.plugins.configureRouting
 

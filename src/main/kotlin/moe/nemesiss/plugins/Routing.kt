@@ -6,12 +6,11 @@ import io.ktor.request.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import moe.nemesiss.di.extension.getInstance
-import moe.nemesiss.di.feature.dependencyGraph
+import moe.nemesiss.di.features.dependencyGraph
 import moe.nemesiss.models.authentication.SimpleAuthenticationInfo
 import moe.nemesiss.services.authentication.AuthenticationService
 import moe.nemesiss.services.user.UserService
 import mu.KotlinLogging
-import sun.java2d.pipe.SpanShapeRenderer
 
 fun Application.configureRouting() {
     routing {
