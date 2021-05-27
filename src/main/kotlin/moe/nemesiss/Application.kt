@@ -7,22 +7,26 @@ import io.ktor.features.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import moe.nemesiss.di.features.DependencyInjection
-import moe.nemesiss.di.modules.user.UserModule
 import moe.nemesiss.plugins.configureRouting
 
-fun main() {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
-        configureRouting()
-        install(ContentNegotiation) {
-            fastjson {
-                features(SerializerFeature.WriteMapNullValue)
-                config {
-                    isAsmEnable = false
+class Application {
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+                configureRouting()
+                install(ContentNegotiation) {
+                    fastjson {
+                        features(SerializerFeature.WriteMapNullValue)
+                        config {
+                            isAsmEnable = false
+                        }
+                    }
                 }
-            }
+                install(DependencyInjection) {
+                    scanBasePackageClasses += Application::class.java
+                }
+            }.start(wait = true)
         }
-        install(DependencyInjection) {
-            modules += arrayOf(UserModule())
-        }
-    }.start(wait = true)
+    }
 }

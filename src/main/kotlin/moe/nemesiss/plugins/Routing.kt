@@ -21,12 +21,12 @@ fun Application.configureRouting() {
         }
         get("/user") {
             val userId = call.request.queryParameters["id"]?.toInt() ?: 0
-            val userService = dependencyGraph().getInstance<UserService>()
+            val userService = dependencyGraph.getInstance<UserService>()
             call.respond(userService.getUser(userId))
         }
         post("/authenticate") {
             val info = call.receive<SimpleAuthenticationInfo>()
-            val authService = dependencyGraph().getInstance<AuthenticationService>()
+            val authService = dependencyGraph.getInstance<AuthenticationService>()
             if (authService.authenticate(info)) {
                 log.info { "Authenticate successfully!" }
                 call.respondText { "Hello, world" }

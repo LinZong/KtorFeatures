@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ktor-sample.iml" filepath="$PROJECT_DIR$/ktor-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../reflections/reflections.iml" filepath="$PROJECT_DIR$/../reflections/reflections.iml" />
     </modules>
   </component>
 </project>

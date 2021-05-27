@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ktor-sample" />
+        <module name="reflections" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ktor-sample" target="1.5" />
+      <module name="ktor-sample" target="8" />
+      <module name="reflections" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
