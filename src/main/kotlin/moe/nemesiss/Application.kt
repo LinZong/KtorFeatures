@@ -24,6 +24,7 @@ class Application {
                     }
                 }
                 install(DependencyInjection) {
+                    // specify the root package for dependency injection scanning.
                     scanBasePackageClasses += Application::class.java
                 }
             }.start(wait = true)
